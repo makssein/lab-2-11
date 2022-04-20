@@ -1,4 +1,5 @@
 #include <iostream>
+#include "inc/CodeGenerator.hpp"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
