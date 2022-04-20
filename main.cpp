@@ -2,6 +2,7 @@
 #include "inc/CodeGenerator.hpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    std::shared_ptr<CodeGenerator> code = codeFactory(Kotlin);
+    std::cout << code->generateCode() << std::endl;
     return 0;
 }
