@@ -2,7 +2,7 @@
 #include "inc/CodeGenerator.hpp"
 
 int main() {
-    std::shared_ptr<CodeGenerator> code = codeFactory(Kotlin);
+    CodeGenerator* code = codeFactory(JAVA);
     std::cout << code->generateCode() << std::endl;
     return 0;
 }

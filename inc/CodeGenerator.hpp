@@ -87,13 +87,14 @@ protected:
     }
 };
 
-std::shared_ptr<CodeGenerator> codeFactory(enum Lang language) {
+CodeGenerator* codeFactory(enum Lang language) {
+    CodeGenerator* code = nullptr;
     switch(language) {
-        case JAVA: return std::make_shared<JavaCodeGenerator>();
-        case C_PLUS_PLUS: return std::make_shared<CppCodeGenerator>();
-        case PHP: return std::make_shared<PHPCodeGenerator>();
-        case GO: return std::make_shared<GoCodeGenerator>();
-        case Kotlin: return std::make_shared<KotlinCodeGenerator>();
+        case JAVA: return code = new JavaCodeGenerator();
+        case C_PLUS_PLUS: return code = new CppCodeGenerator();
+        case PHP: return code = new PHPCodeGenerator();
+        case GO: return code = new GoCodeGenerator();
+        case Kotlin: return code = new KotlinCodeGenerator();
     }
     throw std::logic_error("Bad language");
 }
