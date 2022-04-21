@@ -93,7 +93,7 @@ CodeGenerator* codeFactory(enum Lang language) {
         case C_PLUS_PLUS: return new CppCodeGenerator();
         case PHP: return new PHPCodeGenerator();
         case GO: return new GoCodeGenerator();
-        case Kotlin: return  new KotlinCodeGenerator();
+        case Kotlin: return new KotlinCodeGenerator();
     }
     throw std::logic_error("Bad language");
 }
