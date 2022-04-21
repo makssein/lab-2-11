@@ -88,13 +88,12 @@ protected:
 };
 
 CodeGenerator* codeFactory(enum Lang language) {
-    CodeGenerator* code = nullptr;
     switch(language) {
-        case JAVA: return code = new JavaCodeGenerator();
-        case C_PLUS_PLUS: return code = new CppCodeGenerator();
-        case PHP: return code = new PHPCodeGenerator();
-        case GO: return code = new GoCodeGenerator();
-        case Kotlin: return code = new KotlinCodeGenerator();
+        case JAVA: return new JavaCodeGenerator();
+        case C_PLUS_PLUS: return new CppCodeGenerator();
+        case PHP: return new PHPCodeGenerator();
+        case GO: return new GoCodeGenerator();
+        case Kotlin: return  new KotlinCodeGenerator();
     }
     throw std::logic_error("Bad language");
 }
